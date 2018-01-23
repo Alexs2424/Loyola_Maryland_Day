@@ -34,7 +34,7 @@ class TimelineTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         // Enable navbar's hideOnSwipe
-        navigationController?.hidesBarsOnSwipe = true
+//        navigationController?.hidesBarsOnSwipe = true
     }
 
     // MARK: - Table view data source
