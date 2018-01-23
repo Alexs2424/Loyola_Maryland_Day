@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -72,51 +71,58 @@
         <scene sceneID="pdd-Pa-Yrr">
             <objects>
                 <tableViewController title="Timeline" id="WKz-7f-Tpz" customClass="TimelineTableViewController" customModule="Loyola_Maryland_Day" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gl3-bZ-gci">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gl3-bZ-gci">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timelineCell" rowHeight="100" id="jEz-2C-SVR">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timelineCell" rowHeight="143" id="jEz-2C-SVR" customClass="TimelineCell" customModule="Loyola_Maryland_Day" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="143"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jEz-2C-SVR" id="rDa-DR-vdH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NEN-nK-Fvv">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="100"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Test Picture 1" translatesAutoresizingMaskIntoConstraints="NO" id="0aO-s9-CWL">
+                                            <rect key="frame" x="16" y="8" width="343" height="126"/>
                                         </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rc7-KK-kHV">
-                                            <rect key="frame" x="16" y="39.5" width="343" height="20.5"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMU-n9-6w0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQg-ZQ-292">
-                                                    <rect key="frame" x="178" y="0.0" width="165" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Maryland Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQw-R6-C6S">
+                                            <rect key="frame" x="21" y="37" width="332" height="37"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="37" id="v3C-SH-pGK"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1998" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7N-Hd-gBu">
+                                            <rect key="frame" x="21" y="74" width="316" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="27" id="ShY-I5-5W8"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.0039215686269999999" green="0.34901960780000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstItem="NEN-nK-Fvv" firstAttribute="centerX" secondItem="rDa-DR-vdH" secondAttribute="centerX" id="3eB-88-3an"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="rc7-KK-kHV" secondAttribute="trailing" id="Cva-w2-fjU"/>
-                                        <constraint firstItem="NEN-nK-Fvv" firstAttribute="top" secondItem="rDa-DR-vdH" secondAttribute="top" id="DCR-Wd-BC1"/>
-                                        <constraint firstItem="rc7-KK-kHV" firstAttribute="leading" secondItem="rDa-DR-vdH" secondAttribute="leadingMargin" id="REw-OH-zDG"/>
-                                        <constraint firstItem="NEN-nK-Fvv" firstAttribute="centerY" secondItem="rc7-KK-kHV" secondAttribute="centerY" id="ejH-3W-Jgo"/>
-                                        <constraint firstItem="NEN-nK-Fvv" firstAttribute="leading" secondItem="rc7-KK-kHV" secondAttribute="leading" id="pC7-KF-Hyx"/>
-                                        <constraint firstItem="rc7-KK-kHV" firstAttribute="centerY" secondItem="rDa-DR-vdH" secondAttribute="centerY" id="vKy-Da-FgA"/>
-                                        <constraint firstItem="NEN-nK-Fvv" firstAttribute="trailing" secondItem="rc7-KK-kHV" secondAttribute="trailing" id="vQP-G6-WZT"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="W7N-Hd-gBu" secondAttribute="trailing" constant="22" id="0ow-LF-rKw"/>
+                                        <constraint firstAttribute="bottom" secondItem="0aO-s9-CWL" secondAttribute="bottom" constant="8.5" id="5em-Zp-M2R"/>
+                                        <constraint firstItem="W7N-Hd-gBu" firstAttribute="leading" secondItem="rDa-DR-vdH" secondAttribute="leadingMargin" constant="5" id="Dm7-sO-GJo"/>
+                                        <constraint firstItem="dQw-R6-C6S" firstAttribute="top" secondItem="rDa-DR-vdH" secondAttribute="topMargin" constant="26" id="E20-x2-t3c"/>
+                                        <constraint firstAttribute="trailing" secondItem="0aO-s9-CWL" secondAttribute="trailing" constant="16" id="P77-nf-ejN"/>
+                                        <constraint firstItem="0aO-s9-CWL" firstAttribute="leading" secondItem="rDa-DR-vdH" secondAttribute="leading" constant="16" id="h3Q-dS-SeZ"/>
+                                        <constraint firstItem="0aO-s9-CWL" firstAttribute="top" secondItem="rDa-DR-vdH" secondAttribute="top" constant="8" id="ps4-a5-kdw"/>
+                                        <constraint firstItem="W7N-Hd-gBu" firstAttribute="top" secondItem="dQw-R6-C6S" secondAttribute="bottom" id="qH4-ot-1Mo"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="dQw-R6-C6S" secondAttribute="trailing" constant="6" id="tsc-cm-TTg"/>
+                                        <constraint firstItem="dQw-R6-C6S" firstAttribute="leading" secondItem="rDa-DR-vdH" secondAttribute="leadingMargin" constant="5" id="x08-5b-F7Y"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="date" destination="W7N-Hd-gBu" id="G4Q-yp-d8e"/>
+                                    <outlet property="marylandDayImageView" destination="0aO-s9-CWL" id="S0f-B6-xZA"/>
+                                    <outlet property="title" destination="dQw-R6-C6S" id="vya-MR-ufF"/>
                                     <segue destination="dzj-DU-Hkn" kind="show" id="pnY-zq-61N"/>
                                 </connections>
                             </tableViewCell>
@@ -206,6 +212,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Test Picture 1" width="1512" height="2016"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

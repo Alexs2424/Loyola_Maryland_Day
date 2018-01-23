@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		178F11D42017989E001B137F /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178F11D32017989E001B137F /* TimelineCell.swift */; };
+		178F11D720179A46001B137F /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178F11D620179A46001B137F /* TestData.swift */; };
 		932ED22E201599C100E7D2A9 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932ED22D201599C100E7D2A9 /* TimelineTableViewController.swift */; };
 		93AF4D762015A5AF003B9E11 /* TimelineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AF4D752015A5AF003B9E11 /* TimelineDetailViewController.swift */; };
 		FA45FAE7200FD5AF00EBE1DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45FAE6200FD5AF00EBE1DE /* AppDelegate.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		178F11D32017989E001B137F /* TimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
+		178F11D620179A46001B137F /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		932ED22D201599C100E7D2A9 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		93AF4D752015A5AF003B9E11 /* TimelineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineDetailViewController.swift; sourceTree = "<group>"; };
 		FA45FAE3200FD5AF00EBE1DE /* Loyola Maryland Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loyola Maryland Day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +84,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		178F11D22017986C001B137F /* Timeline Table View */ = {
+			isa = PBXGroup;
+			children = (
+				932ED22D201599C100E7D2A9 /* TimelineTableViewController.swift */,
+				178F11D32017989E001B137F /* TimelineCell.swift */,
+			);
+			path = "Timeline Table View";
+			sourceTree = "<group>";
+		};
+		178F11D520179A11001B137F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				178F11D620179A46001B137F /* TestData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FA45FADA200FD5AF00EBE1DE = {
 			isa = PBXGroup;
 			children = (
@@ -104,11 +125,12 @@
 			isa = PBXGroup;
 			children = (
 				FA45FAE6200FD5AF00EBE1DE /* AppDelegate.swift */,
+				FA45FAEC200FD5AF00EBE1DE /* Main.storyboard */,
 				FA45FAE8200FD5AF00EBE1DE /* FirstViewController.swift */,
 				FA45FAEA200FD5AF00EBE1DE /* SecondViewController.swift */,
-				932ED22D201599C100E7D2A9 /* TimelineTableViewController.swift */,
+				178F11D22017986C001B137F /* Timeline Table View */,
 				93AF4D752015A5AF003B9E11 /* TimelineDetailViewController.swift */,
-				FA45FAEC200FD5AF00EBE1DE /* Main.storyboard */,
+				178F11D520179A11001B137F /* Model */,
 				FA45FAEF200FD5AF00EBE1DE /* Assets.xcassets */,
 				FA45FAF1200FD5AF00EBE1DE /* LaunchScreen.storyboard */,
 				FA45FAF4200FD5AF00EBE1DE /* Info.plist */,
@@ -268,10 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178F11D42017989E001B137F /* TimelineCell.swift in Sources */,
 				FA45FAEB200FD5AF00EBE1DE /* SecondViewController.swift in Sources */,
 				93AF4D762015A5AF003B9E11 /* TimelineDetailViewController.swift in Sources */,
 				FA45FAE7200FD5AF00EBE1DE /* AppDelegate.swift in Sources */,
 				932ED22E201599C100E7D2A9 /* TimelineTableViewController.swift in Sources */,
+				178F11D720179A46001B137F /* TestData.swift in Sources */,
 				FA45FAE9200FD5AF00EBE1DE /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
