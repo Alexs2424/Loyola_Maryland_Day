@@ -9,32 +9,32 @@
 import UIKit
 
 class TimelineDetailViewController: UIViewController {
+    
+    var recievedData: TestData?
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        self.title = "Test"
+        self.title = recievedData?.title
         
-        // Retrieve photo from remote source
-        // #warning Need to make this asynchronous! This is inefficient and is just for testing purposes
-        let url = URL(string: "https://specials-images.forbes.com/imageserve/03Q18Al8ylg0N/0x600.jpg?fit=scale&background=000000")
-        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-        imageView?.image = UIImage(data: data!)
+        self.titleLabel.text = recievedData?.title
+        
+        //self.description =
+        
+        imageView.image = TimelineTableViewController().photoForIdNumber(Id: (recievedData?.photoId)!)
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        // Disable navbar's hideOnSwipe and show it if hidden
-        navigationController?.hidesBarsOnSwipe = false
-        self.navigationController?.navigationBar.isHidden = false
     }
 
     /*

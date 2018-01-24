@@ -89,6 +89,7 @@
 			children = (
 				932ED22D201599C100E7D2A9 /* TimelineTableViewController.swift */,
 				178F11D32017989E001B137F /* TimelineCell.swift */,
+				93AF4D752015A5AF003B9E11 /* TimelineDetailViewController.swift */,
 			);
 			path = "Timeline Table View";
 			sourceTree = "<group>";
@@ -129,7 +130,6 @@
 				FA45FAE8200FD5AF00EBE1DE /* FirstViewController.swift */,
 				FA45FAEA200FD5AF00EBE1DE /* SecondViewController.swift */,
 				178F11D22017986C001B137F /* Timeline Table View */,
-				93AF4D752015A5AF003B9E11 /* TimelineDetailViewController.swift */,
 				178F11D520179A11001B137F /* Model */,
 				FA45FAEF200FD5AF00EBE1DE /* Assets.xcassets */,
 				FA45FAF1200FD5AF00EBE1DE /* LaunchScreen.storyboard */,

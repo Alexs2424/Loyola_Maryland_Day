@@ -14,6 +14,9 @@ class TimelineTableViewController: UITableViewController {
     let reuseIdentifier: String = "timelineCell"
     var tempTableArray: [String] = []
     let data = TestData.getTestData()
+    
+    // Helper varible that tells which TestData object is passed to the detail view
+    var indexToPass = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +34,6 @@ class TimelineTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        // Enable navbar's hideOnSwipe
-//        navigationController?.hidesBarsOnSwipe = true
-    }
 
     // MARK: - Table view data source
 
@@ -45,7 +43,6 @@ class TimelineTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning make this dynamic after setting up backend
         // return the number of rows
         return data.count
     }
@@ -66,18 +63,24 @@ class TimelineTableViewController: UITableViewController {
 //        cell.imageView?.isOpaque = true
 //        cell.imageView?.alpha = 0.7
 
-        
-        // Retrieve photo from remote source
-        // #warning Need to make this asynchronous! This is inefficient and is just for testing purposes
-//        let url = URL(string: "https://specials-images.forbes.com/imageserve/03Q18Al8ylg0N/0x600.jpg?fit=scale&background=000000")
-//        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-//        cell.imageView?.image = UIImage(data: data!)
-
         return timelineCell! 
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        indexToPass = indexPath.row
         
+        performSegue(withIdentifier: "timelineDetailSegue", sender: nil)
+    }
+    
+    // Passes selected TestData to Detail controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "timelineDetailSegue" {
+            // get a reference to the detail view controller
+            let destination = segue.destination as! TimelineDetailViewController
+            
+            // passes the TestData from the selected cell to the detail view controller
+            destination.recievedData = data[indexToPass]
+        }
     }
     
     func photoForIdNumber(Id: Int) -> UIImage {
