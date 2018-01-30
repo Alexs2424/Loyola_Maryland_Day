@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		178F11D42017989E001B137F /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178F11D32017989E001B137F /* TimelineCell.swift */; };
 		178F11D720179A46001B137F /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178F11D620179A46001B137F /* TestData.swift */; };
+		17A3567F201FC674002F7F5B /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3567E201FC674002F7F5B /* JSONParser.swift */; };
+		17A35681201FE3BA002F7F5B /* MDayEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A35680201FE3BA002F7F5B /* MDayEvent.swift */; };
 		932ED22E201599C100E7D2A9 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932ED22D201599C100E7D2A9 /* TimelineTableViewController.swift */; };
 		93AF4D762015A5AF003B9E11 /* TimelineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AF4D752015A5AF003B9E11 /* TimelineDetailViewController.swift */; };
 		FA45FAE7200FD5AF00EBE1DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45FAE6200FD5AF00EBE1DE /* AppDelegate.swift */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		178F11D32017989E001B137F /* TimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
 		178F11D620179A46001B137F /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		17A3567E201FC674002F7F5B /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		17A35680201FE3BA002F7F5B /* MDayEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDayEvent.swift; sourceTree = "<group>"; };
 		932ED22D201599C100E7D2A9 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		93AF4D752015A5AF003B9E11 /* TimelineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineDetailViewController.swift; sourceTree = "<group>"; };
 		FA45FAE3200FD5AF00EBE1DE /* Loyola Maryland Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loyola Maryland Day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				178F11D620179A46001B137F /* TestData.swift */,
+				17A3567E201FC674002F7F5B /* JSONParser.swift */,
+				17A35680201FE3BA002F7F5B /* MDayEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,7 +297,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				178F11D42017989E001B137F /* TimelineCell.swift in Sources */,
+				17A35681201FE3BA002F7F5B /* MDayEvent.swift in Sources */,
 				FA45FAEB200FD5AF00EBE1DE /* SecondViewController.swift in Sources */,
+				17A3567F201FC674002F7F5B /* JSONParser.swift in Sources */,
 				93AF4D762015A5AF003B9E11 /* TimelineDetailViewController.swift in Sources */,
 				FA45FAE7200FD5AF00EBE1DE /* AppDelegate.swift in Sources */,
 				932ED22E201599C100E7D2A9 /* TimelineTableViewController.swift in Sources */,
@@ -463,7 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8ES66X8FF8;
 				INFOPLIST_FILE = "Loyola Maryland Day/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "innovatellc.Loyola-Maryland-Day";
@@ -478,7 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8ES66X8FF8;
 				INFOPLIST_FILE = "Loyola Maryland Day/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "innovatellc.Loyola-Maryland-Day";

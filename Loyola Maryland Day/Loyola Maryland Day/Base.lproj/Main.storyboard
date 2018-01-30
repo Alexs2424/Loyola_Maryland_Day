@@ -158,15 +158,15 @@
                                 <rect key="frame" x="16" y="425" width="343" height="175"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UJ-pe-rNs">
-                                <rect key="frame" x="37" y="385" width="300" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UJ-pe-rNs">
+                                <rect key="frame" x="16" y="385" width="343" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="MJm-Mj-MLv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -180,7 +180,7 @@
                             <constraint firstItem="P9Z-sS-cX5" firstAttribute="centerX" secondItem="vzW-Yn-jdp" secondAttribute="centerX" id="YNt-IP-ES4"/>
                             <constraint firstItem="P9Z-sS-cX5" firstAttribute="top" secondItem="7UJ-pe-rNs" secondAttribute="bottom" constant="8" symbolic="YES" id="ajB-HU-clB"/>
                             <constraint firstItem="7UJ-pe-rNs" firstAttribute="centerX" secondItem="P9Z-sS-cX5" secondAttribute="centerX" id="d78-6i-rng"/>
-                            <constraint firstItem="7UJ-pe-rNs" firstAttribute="leading" secondItem="hkx-0q-eSo" secondAttribute="leading" constant="37" id="i7Z-wK-T0T"/>
+                            <constraint firstItem="7UJ-pe-rNs" firstAttribute="leading" secondItem="hkx-0q-eSo" secondAttribute="leading" constant="16" id="i7Z-wK-T0T"/>
                             <constraint firstItem="7UJ-pe-rNs" firstAttribute="top" secondItem="I0g-Hf-q6t" secondAttribute="bottom" constant="8" symbolic="YES" id="i9S-QZ-yMl"/>
                             <constraint firstItem="I0g-Hf-q6t" firstAttribute="leading" secondItem="hkx-0q-eSo" secondAttribute="leading" id="ozy-af-f1E"/>
                         </constraints>
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zi-ny-c9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2248.8000000000002" y="342.27886056971516"/>
+            <point key="canvasLocation" x="2183" y="342"/>
         </scene>
         <!--Timeline-->
         <scene sceneID="Hjk-Si-w6d">
