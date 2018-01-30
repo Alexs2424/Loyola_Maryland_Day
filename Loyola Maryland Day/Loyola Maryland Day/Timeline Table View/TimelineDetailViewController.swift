@@ -10,7 +10,7 @@ import UIKit
 
 class TimelineDetailViewController: UIViewController {
     
-    var recievedData: TestData?
+    var recievedData: MDay?
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -27,7 +27,7 @@ class TimelineDetailViewController: UIViewController {
         self.titleLabel.text = recievedData?.title
         
         //self.description =
-        
+        //provide random photo id
         imageView.image = TimelineTableViewController().photoForIdNumber(Id: (recievedData?.photoId)!)
 
     }

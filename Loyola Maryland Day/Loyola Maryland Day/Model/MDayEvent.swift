@@ -13,7 +13,7 @@ struct MDay {
     let year: Int
     let picPath:String
     let videoPath:String
-    
+    let photoId:Int
 }
 
 extension MDay {
@@ -29,5 +29,6 @@ extension MDay {
         self.year = year
         self.picPath = picPath
         self.videoPath = videoPath
+        self.photoId = Int(arc4random_uniform(2) + 1)
     }
 }

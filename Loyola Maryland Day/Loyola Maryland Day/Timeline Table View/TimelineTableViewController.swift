@@ -11,9 +11,12 @@ import UIKit
 class TimelineTableViewController: UITableViewController {
     
     //MARK: - Properties
+    let requestURL = "http://hjfranceschi.cs.loyola.edu/videos/getVideos.php"
     let reuseIdentifier: String = "timelineCell"
     var tempTableArray: [String] = []
     let data = TestData.getTestData()
+    
+    var mDayData = [MDay] ()
     
     // Helper varible that tells which TestData object is passed to the detail view
     var indexToPass = 0
@@ -21,55 +24,17 @@ class TimelineTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.tableView.rowHeight = 143
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        getJSONData()
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // return the number of rows
-        return data.count
-    }
-
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let timelineCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? TimelineCell
-        
-        //Test Setup for TimelineCell
-        timelineCell?.title.text = data[indexPath.row].title
-        timelineCell?.date.text = data[indexPath.row].date
-        timelineCell?.marylandDayImageView.image = photoForIdNumber(Id: data[indexPath.row].photoId)
-        timelineCell?.marylandDayImageView.contentMode = .scaleAspectFill
-        timelineCell?.marylandDayImageView.layer.masksToBounds = true
-        timelineCell?.marylandDayImageView.layer.cornerRadius = 12
-
-        // Add transparant effect
-//        cell.imageView?.isOpaque = true
-//        cell.imageView?.alpha = 0.7
-
-        return timelineCell! 
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        indexToPass = indexPath.row
-        
-        performSegue(withIdentifier: "timelineDetailSegue", sender: nil)
     }
     
     // Passes selected TestData to Detail controller
@@ -79,10 +44,12 @@ class TimelineTableViewController: UITableViewController {
             let destination = segue.destination as! TimelineDetailViewController
             
             // passes the TestData from the selected cell to the detail view controller
-            destination.recievedData = data[indexToPass]
+            //destination.recievedData = data[indexToPass] testdata
+            destination.recievedData = mDayData[indexToPass]
         }
     }
     
+    //Quick for testing for different default photos
     func photoForIdNumber(Id: Int) -> UIImage {
         switch Id {
         case 1:
@@ -96,41 +63,101 @@ class TimelineTableViewController: UITableViewController {
         }
     }
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    /* JSON PARSE FUNCTION */
+    func getJSONData() {
+        let requestURL: URL = URL(string: self.requestURL)!
+        let urlRequest: URLRequest = URLRequest(url: requestURL)
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                print("Everyone is fine, file downloaded successfully.")
+                
+                do {
+                    let jsonResponse: NSArray = (try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as? NSArray)!
+                    
+                    print("Response: \(jsonResponse)")
+                    var count = 0
+                    for obj in jsonResponse {
+                        
+                        print("Object at Index \(count) --- \(obj)")
+                        count += 1
+                        
+                        if let objDetails = obj as? [String : AnyObject] {
+                            
+                            let mDayEvent = MDay(json: objDetails)
+                            self.mDayData.append(mDayEvent!)
+                            
+                        }
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                } catch {
+                    print("Error with JSON: \(error)")
+                }
+            }
+        })
+        task.resume()
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    /* END JSON PARSE */
 }
+    
+    /* EXTENDING TIMELINE TABLE VIEW */
+    //This always goes at the bottom of the file
+    //and allows the dynamically load the tableview
+    
+    extension TimelineTableViewController {
+        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let timelineCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? TimelineCell
+            
+            //Test Setup for TimelineCell Test data
+//            timelineCell?.title.text = data[indexPath.row].title
+//            timelineCell?.date.text = data[indexPath.row].date
+//            timelineCell?.marylandDayImageView.image = photoForIdNumber(Id: data[indexPath.row].photoId)
+//            timelineCell?.marylandDayImageView.contentMode = .scaleAspectFill
+//            timelineCell?.marylandDayImageView.layer.masksToBounds = true
+//            timelineCell?.marylandDayImageView.layer.cornerRadius = 12
+            
+            
+            //JSON DATA
+            timelineCell?.title.text = mDayData[indexPath.row].title
+            timelineCell?.date.text = "\(mDayData[indexPath.row].year)"
+            timelineCell?.marylandDayImageView.image = photoForIdNumber(Id: mDayData[indexPath.row].photoId)
+            timelineCell?.marylandDayImageView.contentMode = .scaleAspectFill
+            timelineCell?.marylandDayImageView.layer.masksToBounds = true
+            timelineCell?.marylandDayImageView.layer.cornerRadius = 12
+            
+            return timelineCell!
+        }
+        
+        // MARK: - Table view data source
+        
+        override func numberOfSections(in tableView: UITableView) -> Int {
+            // return the number of sections
+            return 1
+        }
+        
+        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            // return the number of rows
+            return mDayData.count
+        }
+        
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            indexToPass = indexPath.row
+            
+            performSegue(withIdentifier: "timelineDetailSegue", sender: nil)
+        }
+        
+}
+
+
+

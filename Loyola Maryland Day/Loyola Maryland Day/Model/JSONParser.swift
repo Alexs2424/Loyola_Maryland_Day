@@ -32,28 +32,22 @@ struct JSONParser {
                     let jsonResponse: NSArray = (try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as? NSArray)!
                     
                     print("Response: \(jsonResponse)")
-                    
+                    var count = 0
                     for obj in jsonResponse {
+
+                        print("Object at Index \(count) --- \(obj)")
+                        count += 1
                         
+                        if let objDetails = obj as? [String : AnyObject] {
+
+                            let mDayEvent = MDay(json: objDetails)
+                            
+                            print("Event Name: \(mDayEvent!.title)")
+                        }
                     }
                 } catch {
                     print("Error with JSON: \(error)")
                 }
-                
-//                do {
-//
-//                    let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as? [String : String]
-//
-//                    print("JSON Data\n \(String(describing: json))")
-//
-//
-//                    if let results = json {//as? [String : AnyObject] { //was json["results"]
-//                        print("RESULTS: \n\n\(results)")
-//                    }
-//
-//                } catch {
-//                    print("Error with Json: \(error)")
-//                }
             }
         })
         task.resume()
