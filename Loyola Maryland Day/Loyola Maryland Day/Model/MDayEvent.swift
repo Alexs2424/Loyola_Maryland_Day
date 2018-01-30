@@ -29,6 +29,8 @@ extension MDay {
         self.year = year
         self.picPath = picPath
         self.videoPath = videoPath
-        self.photoId = Int(arc4random_uniform(2) + 1)
+        let photoNum = arc4random_uniform(2)
+        self.photoId = Int(photoNum) + 1
+        print("Photo ID: \(self.photoId)")
     }
 }

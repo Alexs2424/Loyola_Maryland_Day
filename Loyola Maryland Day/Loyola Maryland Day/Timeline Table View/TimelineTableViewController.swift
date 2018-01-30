@@ -24,6 +24,11 @@ class TimelineTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        }
+        
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.rowHeight = 143
@@ -136,6 +141,17 @@ class TimelineTableViewController: UITableViewController {
             timelineCell?.marylandDayImageView.layer.masksToBounds = true
             timelineCell?.marylandDayImageView.layer.cornerRadius = 12
             
+            
+            //Applying shadow so everything appears readable
+            timelineCell?.title.textColor = UIColor.white
+            timelineCell?.title.layer.shadowColor = UIColor.black.cgColor
+            timelineCell?.title.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+            timelineCell?.title.layer.shadowRadius = 2.5 //5.0 was pretty good
+            timelineCell?.title.layer.shadowOpacity = 0.9
+            timelineCell?.title.layer.masksToBounds = false
+            timelineCell?.title.layer.shouldRasterize = true
+
+            
             return timelineCell!
         }
         
@@ -152,6 +168,8 @@ class TimelineTableViewController: UITableViewController {
         }
         
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            
             indexToPass = indexPath.row
             
             performSegue(withIdentifier: "timelineDetailSegue", sender: nil)

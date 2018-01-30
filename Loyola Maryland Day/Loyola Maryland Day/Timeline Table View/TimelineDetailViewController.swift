@@ -22,7 +22,14 @@ class TimelineDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        self.title = recievedData?.title
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        }
+        
+        //Setting the UINavigation bar tint
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.0, green: 0.35, blue: 0.29, alpha: 1.0)
+        
+        self.title = "\(recievedData!.year)"
         
         self.titleLabel.text = recievedData?.title
         

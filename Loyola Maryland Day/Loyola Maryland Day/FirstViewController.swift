@@ -12,15 +12,18 @@ class FirstViewController: UIViewController {
     
     //This is a test view controller until we know what we are getting from
     //the design team
-
+    @IBOutlet weak var videoExample: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //TESTING JSON LOADING
-        let jsonParser = JSONParser()
+        self.videoExample.contentMode = .scaleAspectFill
+        self.videoExample.layer.masksToBounds = true
         
-        jsonParser.getResponse()
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        }
 
     }
 
