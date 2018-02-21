@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Video Example" translatesAutoresizingMaskIntoConstraints="NO" id="mp8-lp-6im">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Video Example" translatesAutoresizingMaskIntoConstraints="NO" id="mp8-lp-6im">
                                 <rect key="frame" x="0.0" y="64" width="375" height="210"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="210" id="cP4-Jp-CGd"/>
@@ -264,7 +264,7 @@
         <scene sceneID="Hjk-Si-w6d">
             <objects>
                 <navigationController title="Timeline" automaticallyAdjustsScrollViewInsets="NO" id="ZXw-7P-Wjr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Timeline" image="Timeline Tab" id="w8J-o3-i1w">
+                    <tabBarItem key="tabBarItem" title="Timeline" image="History Tab" id="w8J-o3-i1w">
                         <color key="badgeColor" red="0.0039215686269999999" green="0.34901960780000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -290,7 +290,7 @@
         <scene sceneID="Xea-Rs-EUl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h9M-Pj-0Vq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" image="History Tab" id="acW-dT-cKf">
+                    <tabBarItem key="tabBarItem" title="History" image="Timeline Tab" id="acW-dT-cKf">
                         <color key="badgeColor" red="0.0039215686269999999" green="0.34901960780000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">

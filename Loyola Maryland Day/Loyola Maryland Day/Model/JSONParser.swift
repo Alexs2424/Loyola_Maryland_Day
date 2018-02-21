@@ -10,7 +10,12 @@ import Foundation
 
 struct JSONParser {
     
-    let requestURL = "http://hjfranceschi.cs.loyola.edu/videos/getVideos.php"
+    let requestURL = "http://hjfranceschi.cs.loyola.edu/videos/controller/getReleasedVideos.php"
+    //old URL
+    //"http://hjfranceschi.cs.loyola.edu/videos/getVideos.php"
+    
+    //new URL
+    //http://hjfranceschi.cs.loyola.edu/videos/controller/getReleasedVideos.php
     
     func getResponse() {
         

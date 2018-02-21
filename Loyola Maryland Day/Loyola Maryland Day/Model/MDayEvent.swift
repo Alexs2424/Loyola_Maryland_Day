@@ -10,6 +10,7 @@ import Foundation
 
 struct MDay {
     let title:String
+    let description:String
     let year: Int
     let picPath:String
     let videoPath:String
@@ -19,6 +20,7 @@ struct MDay {
 extension MDay {
     init?(json: [String : Any]) {
         guard let title = json["title"] as? String,
+        let description = json["description"] as? String,
         let year = json["year"] as? Int,
         let picPath = json["picture"] as? String,
         let videoPath = json["video"] as? String
@@ -26,6 +28,7 @@ extension MDay {
             return nil
         }
         self.title = title
+        self.description = description
         self.year = year
         self.picPath = picPath
         self.videoPath = videoPath

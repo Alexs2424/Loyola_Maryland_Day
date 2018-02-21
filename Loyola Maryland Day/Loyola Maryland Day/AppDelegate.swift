@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         UITabBar.appearance().tintColor = UIColor(red: 0.0, green: 0.35, blue: 0.29, alpha: 1.0)
+        
+//        UINavigationBar.appearance().barTintColor = UIColor(red: 34/255.0, green: 85/255.0, blue: 75/255.0, alpha: 1.0)
+//        UINavigationBar.appearance().tintColor = UIColor.white
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        
         return true
     }
 

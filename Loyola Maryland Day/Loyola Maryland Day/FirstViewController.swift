@@ -24,7 +24,11 @@ class FirstViewController: UIViewController {
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
-
+        
+//        navigationController?.navigationBar.barTintColor = UIColor(red: 34/255.0, green: 85/255.0, blue: 75/255.0, alpha: 1.0)
+//        navigationController?.navigationBar.titleTextAttributes = [UITextAttributeTextColor: UIColor.white]
+//        UINavigationBar.appearance().titleTextAttributes = [UITextAttributeTextColor: UIColor.blueColor()]
+        
     }
 
     override func didReceiveMemoryWarning() {
