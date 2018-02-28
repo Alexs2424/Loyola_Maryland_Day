@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HoeflerText.ttc">
-            <string>HoeflerText-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -23,30 +18,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loyola Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lrz-b9-try">
-                                <rect key="frame" x="109" y="157" width="157" height="168"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9PZ-zM-31u">
+                                <rect key="frame" x="0.0" y="506" width="375" height="161"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loyola Logo" translatesAutoresizingMaskIntoConstraints="NO" id="cr9-PJ-CHs">
+                                        <rect key="frame" x="98" y="16" width="179" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="XA6-aD-Gmj"/>
+                                            <constraint firstAttribute="width" constant="179" id="g8E-0g-SkK"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.084607519209384918" green="0.22797220945358276" blue="0.19999852776527405" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="168" id="Jm6-pE-uVs"/>
-                                    <constraint firstAttribute="width" constant="157" id="s8g-qj-XSy"/>
+                                    <constraint firstAttribute="bottom" secondItem="cr9-PJ-CHs" secondAttribute="bottom" constant="17" id="GVk-Vn-TUV"/>
+                                    <constraint firstAttribute="height" constant="161" id="JAT-rw-eVQ"/>
+                                    <constraint firstItem="cr9-PJ-CHs" firstAttribute="centerX" secondItem="9PZ-zM-31u" secondAttribute="centerX" id="obW-6s-CoX"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Flag" translatesAutoresizingMaskIntoConstraints="NO" id="T3C-yZ-MbA">
+                                <rect key="frame" x="42" y="222" width="292" height="284"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="292" id="Gxr-ca-C84"/>
+                                    <constraint firstAttribute="height" constant="284" id="plh-HT-VQE"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maryland Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MV0-vB-lxZ">
-                                <rect key="frame" x="97" y="357" width="180" height="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loyola Title" translatesAutoresizingMaskIntoConstraints="NO" id="d5U-3A-6aF">
+                                <rect key="frame" x="43" y="56" width="290" height="78"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="NN9-xG-y2E"/>
-                                    <constraint firstAttribute="height" constant="40" id="Unh-qd-iP1"/>
+                                    <constraint firstAttribute="width" constant="290" id="6F0-8z-OMy"/>
+                                    <constraint firstAttribute="height" constant="78" id="d7R-S9-61U"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="27"/>
-                                <color key="textColor" red="0.8436475396156311" green="0.77452284097671509" blue="0.56437152624130249" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.13339337308006047" green="0.33506168750336929" blue="0.29397135610947256" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.25882352941176467" green="0.58823529411764708" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="lrz-b9-try" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="a1t-2D-nHK"/>
-                            <constraint firstItem="MV0-vB-lxZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qLg-oT-PBk"/>
-                            <constraint firstItem="MV0-vB-lxZ" firstAttribute="top" secondItem="lrz-b9-try" secondAttribute="bottom" constant="32" id="wM9-Kf-gP5"/>
-                            <constraint firstItem="lrz-b9-try" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="137" id="wdG-Up-RsS"/>
+                            <constraint firstItem="T3C-yZ-MbA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ABD-8R-PJQ"/>
+                            <constraint firstItem="9PZ-zM-31u" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="DCI-Th-lcM"/>
+                            <constraint firstItem="9PZ-zM-31u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ryb-sw-jp9"/>
+                            <constraint firstItem="9PZ-zM-31u" firstAttribute="top" secondItem="T3C-yZ-MbA" secondAttribute="bottom" id="dXj-fj-GZx"/>
+                            <constraint firstItem="9PZ-zM-31u" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="to5-Po-mVv"/>
+                            <constraint firstItem="d5U-3A-6aF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="w4t-jQ-xmD"/>
+                            <constraint firstItem="d5U-3A-6aF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ybP-za-vQT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -57,6 +70,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Loyola Logo" width="600" height="724"/>
+        <image name="Flag" width="763" height="906"/>
+        <image name="Loyola Logo" width="434" height="356"/>
+        <image name="Loyola Title" width="917" height="213"/>
     </resources>
 </document>
