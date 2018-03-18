@@ -16,6 +16,8 @@ class TimelineDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UITextView!
     
+    var is1952_2 = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,45 +39,14 @@ class TimelineDetailViewController: UIViewController {
         
         //self.description =
         //provide random photo id
-        imageView.image = TimelineTableViewController().photoForIdNumber(Id: (recievedData?.photoId)!)
+        if let year = recievedData?.year {
+            imageView.image = self.photoForYear(year: "\(year)")
+        } else {
+            imageView.image = UIImage(named: "Test Picture 1")!
+        }
         
-        //Downloading the image
-//        let session = URLSession(configuration: .default)
-//
-//        //creating a dataTask
-//        let getImageFromUrl = session.dataTask(with: URL(string: (recievedData?.picPath)!)!) { (data, response, error) in
-//
-//            //if there is any error
-//            if let e = error {
-//                //displaying the message
-//                print("Error Occurred: \(e)")
-//
-//            } else {
-//                //in case of now error, checking wheather the response is nil or not
-//                if (response as? HTTPURLResponse) != nil {
-//
-//                    //checking if the response contains an image
-//                    if let imageData = data {
-//
-//                        //getting the image
-//                        let image = UIImage(data: imageData)
-//
-//                        //displaying the image
-//                        DispatchQueue.main.async {
-//                            self.imageView.image = image
-//                        }
-//                    } else {
-//                        print("Image file is currupted")
-//                    }
-//                } else {
-//                    print("No response from server")
-//                }
-//            }
-//        }
-//
-//        //starting the download task
-//        getImageFromUrl.resume()
-
+        self.titleLabel.minimumScaleFactor = 0.5
+        self.titleLabel.adjustsFontSizeToFitWidth = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,14 +54,19 @@ class TimelineDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func photoForYear(year: String) -> UIImage {
+        if year != "1952" {
+            return UIImage(named: year)!
+        } else {
+            if self.is1952_2 == false {
+                self.is1952_2 = true
+                return UIImage(named: year)!
+            } else if self.is1952_2 == true {
+                self.is1952_2 = false
+                let newImagePath = "\(year)_2"
+                return UIImage(named: newImagePath)!
+            }
+        }
+        return UIImage(named: "Test Picture 1")!
     }
-    */
-
 }

@@ -22,7 +22,8 @@ class TimelineTableViewController: UITableViewController {
     
     // Helper varible that tells which TestData object is passed to the detail view
     var indexToPass = 0
-
+    var is1952_2 = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,6 +69,22 @@ class TimelineTableViewController: UITableViewController {
         default:
             return UIImage(named: "Test Picture 1")!
         }
+    }
+    
+    func photoForYear(year: String) -> UIImage {
+        if year != "1952" {
+            return UIImage(named: year)!
+        } else {
+            if self.is1952_2 == false {
+                self.is1952_2 = true
+                return UIImage(named: year)!
+            } else if self.is1952_2 == true {
+                self.is1952_2 = false
+                let newImagePath = "\(year)_2"
+                return UIImage(named: newImagePath)!
+            }
+        }
+        return UIImage(named: "Test Picture 1")!
     }
 
     /* JSON PARSE FUNCTION */
@@ -138,7 +155,7 @@ class TimelineTableViewController: UITableViewController {
             //JSON DATA
             timelineCell?.title.text = mDayData[indexPath.row].title
             timelineCell?.date.text = "\(mDayData[indexPath.row].year)"
-            timelineCell?.marylandDayImageView.image = photoForIdNumber(Id: mDayData[indexPath.row].photoId)
+            timelineCell?.marylandDayImageView.image = self.photoForYear(year: "\(mDayData[indexPath.row].year)")//photoForIdNumber(Id: mDayData[indexPath.row].photoId)
             timelineCell?.marylandDayImageView.contentMode = .scaleAspectFill
             timelineCell?.marylandDayImageView.layer.masksToBounds = true
             timelineCell?.marylandDayImageView.layer.cornerRadius = 12
