@@ -11,7 +11,7 @@ import UIKit
 class TimelineTableViewController: UITableViewController {
     
     //MARK: - Properties
-    let requestURL = "http://hjfranceschi.cs.loyola.edu/videos/getVideos.php"
+    let requestURL = "https://jesuitmobileapp.loyola.edu/controller/getReleasedVideos.php"
     //NEW URL https://jesuitmobileapp.loyola.edu/controller/getReleasedVideos.php
     //OLD URL "http://hjfranceschi.cs.loyola.edu/videos/getVideos.php"
     let reuseIdentifier: String = "timelineCell"
