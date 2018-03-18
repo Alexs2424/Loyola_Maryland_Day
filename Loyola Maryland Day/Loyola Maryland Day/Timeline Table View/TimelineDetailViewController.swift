@@ -8,13 +8,16 @@
 
 import UIKit
 
-class TimelineDetailViewController: UIViewController {
+class TimelineDetailViewController: UIViewController, UIWebViewDelegate {
     
     var recievedData: MDay?
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UITextView!
+    @IBOutlet weak var vimeoView: UIWebView!
+    
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     
     var is1952_2 = false
     
@@ -23,6 +26,9 @@ class TimelineDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.vimeoView.delegate = self
+        self.activity.hidesWhenStopped = true
         
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -44,6 +50,9 @@ class TimelineDetailViewController: UIViewController {
         } else {
             imageView.image = UIImage(named: "Test Picture 1")!
         }
+        
+        self.webViewForVideo(path: (recievedData?.videoPath)!)
+        
         
         self.titleLabel.minimumScaleFactor = 0.5
         self.titleLabel.adjustsFontSizeToFitWidth = true
@@ -68,5 +77,27 @@ class TimelineDetailViewController: UIViewController {
             }
         }
         return UIImage(named: "Test Picture 1")!
+    }
+    
+    func webViewForVideo(path: String) {
+        if path != "" {
+            //do not hide webview
+            self.vimeoView.isHidden = false
+            let url = URL(string: "\(path)")
+            let request = URLRequest(url: url!)
+            self.vimeoView.loadRequest(request)
+            self.imageView.isHidden = true
+            self.activity.isHidden = false
+            self.activity.startAnimating()
+        } else {
+            //hide webview
+            self.vimeoView.isHidden = true
+            self.activity.isHidden = true
+            self.activity.stopAnimating()
+        }
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        self.activity.stopAnimating()
     }
 }

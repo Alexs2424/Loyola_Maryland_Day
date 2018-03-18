@@ -234,16 +234,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiZ-nl-h1Z">
+                                <rect key="frame" x="0.0" y="64" width="375" height="313"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pUO-Z8-5qa">
+                                <rect key="frame" x="177" y="210" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="I0g-Hf-q6t" firstAttribute="top" secondItem="hkx-0q-eSo" secondAttribute="top" id="0tl-ag-jt6"/>
+                            <constraint firstItem="pUO-Z8-5qa" firstAttribute="centerX" secondItem="vzW-Yn-jdp" secondAttribute="centerX" id="9R7-hI-OGu"/>
+                            <constraint firstItem="pUO-Z8-5qa" firstAttribute="top" secondItem="hkx-0q-eSo" secondAttribute="top" constant="146" id="ECu-hH-0WD"/>
                             <constraint firstItem="I0g-Hf-q6t" firstAttribute="trailing" secondItem="hkx-0q-eSo" secondAttribute="trailing" id="GbX-th-196"/>
                             <constraint firstItem="P9Z-sS-cX5" firstAttribute="leading" secondItem="vzW-Yn-jdp" secondAttribute="leadingMargin" id="NWa-Ys-k0o"/>
                             <constraint firstItem="hkx-0q-eSo" firstAttribute="bottom" secondItem="P9Z-sS-cX5" secondAttribute="bottom" constant="18" id="THs-qc-vzk"/>
                             <constraint firstItem="P9Z-sS-cX5" firstAttribute="centerX" secondItem="vzW-Yn-jdp" secondAttribute="centerX" id="YNt-IP-ES4"/>
                             <constraint firstItem="P9Z-sS-cX5" firstAttribute="top" secondItem="7UJ-pe-rNs" secondAttribute="bottom" constant="-1" id="ajB-HU-clB"/>
+                            <constraint firstItem="CiZ-nl-h1Z" firstAttribute="leading" secondItem="hkx-0q-eSo" secondAttribute="leading" id="bax-pP-1jP"/>
+                            <constraint firstItem="CiZ-nl-h1Z" firstAttribute="trailing" secondItem="hkx-0q-eSo" secondAttribute="trailing" id="d6C-Ws-Fk2"/>
+                            <constraint firstItem="CiZ-nl-h1Z" firstAttribute="top" secondItem="hkx-0q-eSo" secondAttribute="top" id="gth-JZ-g1g"/>
                             <constraint firstItem="7UJ-pe-rNs" firstAttribute="leading" secondItem="hkx-0q-eSo" secondAttribute="leading" constant="16" id="i7Z-wK-T0T"/>
+                            <constraint firstItem="7UJ-pe-rNs" firstAttribute="top" secondItem="CiZ-nl-h1Z" secondAttribute="bottom" constant="8" id="i8D-ys-Kf9"/>
                             <constraint firstItem="7UJ-pe-rNs" firstAttribute="top" secondItem="I0g-Hf-q6t" secondAttribute="bottom" constant="8" symbolic="YES" id="i9S-QZ-yMl"/>
                             <constraint firstItem="I0g-Hf-q6t" firstAttribute="leading" secondItem="hkx-0q-eSo" secondAttribute="leading" id="ozy-af-f1E"/>
                             <constraint firstItem="hkx-0q-eSo" firstAttribute="trailing" secondItem="7UJ-pe-rNs" secondAttribute="trailing" constant="16" id="rA0-Ru-kTp"/>
@@ -251,9 +264,11 @@
                         <viewLayoutGuide key="safeArea" id="hkx-0q-eSo"/>
                     </view>
                     <connections>
+                        <outlet property="activity" destination="pUO-Z8-5qa" id="xHi-bK-PRI"/>
                         <outlet property="descriptionLabel" destination="P9Z-sS-cX5" id="ei5-eH-ycR"/>
                         <outlet property="imageView" destination="I0g-Hf-q6t" id="HvA-Hn-Kym"/>
                         <outlet property="titleLabel" destination="7UJ-pe-rNs" id="23K-Pd-c80"/>
+                        <outlet property="vimeoView" destination="CiZ-nl-h1Z" id="5l4-35-Plr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zi-ny-c9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
