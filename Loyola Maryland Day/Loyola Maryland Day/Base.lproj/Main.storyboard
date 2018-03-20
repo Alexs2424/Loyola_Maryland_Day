@@ -19,94 +19,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Video Example" translatesAutoresizingMaskIntoConstraints="NO" id="mp8-lp-6im">
-                                <rect key="frame" x="0.0" y="64" width="375" height="210"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GC5-xf-TJ8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="274"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="210" id="cP4-Jp-CGd"/>
+                                    <constraint firstAttribute="height" constant="274" id="dgu-F8-yZ9"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loyola Maryland Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naL-nF-ht1">
-                                <rect key="frame" x="16" y="285" width="343" height="34"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="odS-Ar-tFA">
+                                <rect key="frame" x="177" y="159" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="l5B-u3-6Du"/>
+                                    <constraint firstAttribute="height" constant="20" id="O6w-Tv-1O7"/>
+                                    <constraint firstAttribute="width" constant="20" id="m8y-2E-veU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9O-QH-sZz">
-                                <rect key="frame" x="162" y="144" width="50" height="50"/>
+                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9t0-hv-Kha">
+                                <rect key="frame" x="0.0" y="338" width="375" height="280"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Loyola Title" translatesAutoresizingMaskIntoConstraints="NO" id="VHQ-Gm-VTi">
+                                        <rect key="frame" x="67" y="21" width="240" height="47"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="C21-bv-7mh"/>
+                                            <constraint firstAttribute="height" constant="47" id="gao-7q-n3o"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2661682665348053" green="0.59055566787719727" blue="0.46273106336593628" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Ar2-xD-wqN"/>
-                                    <constraint firstAttribute="width" constant="50" id="Fsf-UC-GIW"/>
+                                    <constraint firstItem="VHQ-Gm-VTi" firstAttribute="centerX" secondItem="9t0-hv-Kha" secondAttribute="centerX" id="Ogy-Vq-v2k"/>
+                                    <constraint firstItem="VHQ-Gm-VTi" firstAttribute="top" secondItem="9t0-hv-Kha" secondAttribute="top" constant="26" id="QZa-iB-PJ6"/>
                                 </constraints>
-                                <state key="normal" image="Play"/>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vt8-Na-86y">
-                                <rect key="frame" x="16" y="320" width="343" height="109"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="109" id="KXD-Tu-jwM"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Test Picture 1" translatesAutoresizingMaskIntoConstraints="NO" id="lPa-eE-HsU">
-                                <rect key="frame" x="16" y="441" width="105" height="67"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="0NE-zX-UR7"/>
-                                    <constraint firstAttribute="width" constant="105" id="PAZ-o9-3zD"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jesuits in Maryland" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9z-uc-yJK">
-                                <rect key="frame" x="129" y="460" width="214" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="214" id="QJv-zW-o4x"/>
-                                    <constraint firstAttribute="height" constant="28" id="VTq-lb-Scg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Video:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl0-Ju-JUD">
-                                <rect key="frame" x="129" y="441" width="214" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="dwC-vC-obC"/>
-                                    <constraint firstAttribute="width" constant="214" id="qKb-Au-c0w"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="P9z-uc-yJK" firstAttribute="top" secondItem="vt8-Na-86y" secondAttribute="bottom" constant="31" id="00K-Br-weh"/>
-                            <constraint firstItem="mp8-lp-6im" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="33c-bI-bUS"/>
-                            <constraint firstItem="P9z-uc-yJK" firstAttribute="leading" secondItem="lPa-eE-HsU" secondAttribute="trailing" constant="8" id="4Ro-GI-X2G"/>
-                            <constraint firstItem="naL-nF-ht1" firstAttribute="top" secondItem="mp8-lp-6im" secondAttribute="bottom" constant="11" id="7qk-Tb-jt0"/>
-                            <constraint firstItem="naL-nF-ht1" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="8FB-2n-S6h"/>
-                            <constraint firstItem="mp8-lp-6im" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="Enw-8f-BRg"/>
-                            <constraint firstItem="lPa-eE-HsU" firstAttribute="top" secondItem="vt8-Na-86y" secondAttribute="bottom" constant="12" id="J23-oa-MpK"/>
-                            <constraint firstItem="lPa-eE-HsU" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="L2J-g4-nWq"/>
-                            <constraint firstItem="Jl0-Ju-JUD" firstAttribute="top" secondItem="vt8-Na-86y" secondAttribute="bottom" constant="12" id="StE-fG-aTu"/>
-                            <constraint firstItem="lPa-eE-HsU" firstAttribute="top" secondItem="vt8-Na-86y" secondAttribute="bottom" constant="12" id="UY9-Qn-Qhk"/>
-                            <constraint firstItem="G9O-QH-sZz" firstAttribute="centerY" secondItem="mp8-lp-6im" secondAttribute="centerY" id="Wr3-Os-zTQ"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="naL-nF-ht1" secondAttribute="trailing" constant="16" id="con-PY-jde"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="vt8-Na-86y" secondAttribute="trailing" constant="16" id="d4h-1n-ajw"/>
-                            <constraint firstItem="G9O-QH-sZz" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="gKL-0J-pOm"/>
-                            <constraint firstItem="vt8-Na-86y" firstAttribute="top" secondItem="naL-nF-ht1" secondAttribute="bottom" constant="1" id="gU5-8S-260"/>
-                            <constraint firstItem="vt8-Na-86y" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="icL-8V-cxV"/>
-                            <constraint firstItem="mp8-lp-6im" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="xfy-ZX-Gnv"/>
-                            <constraint firstItem="Jl0-Ju-JUD" firstAttribute="leading" secondItem="lPa-eE-HsU" secondAttribute="trailing" constant="8" id="yaE-5Y-94a"/>
+                            <constraint firstItem="9t0-hv-Kha" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="Ddq-R7-Bhx"/>
+                            <constraint firstItem="GC5-xf-TJ8" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="FPP-oR-Jnr"/>
+                            <constraint firstItem="odS-Ar-tFA" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="95" id="GQU-Kr-9bQ"/>
+                            <constraint firstItem="9t0-hv-Kha" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="IFq-e0-4pq"/>
+                            <constraint firstItem="9t0-hv-Kha" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="R9L-U2-HkP"/>
+                            <constraint firstItem="GC5-xf-TJ8" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="UGK-dl-A6t"/>
+                            <constraint firstItem="9t0-hv-Kha" firstAttribute="top" secondItem="GC5-xf-TJ8" secondAttribute="bottom" id="Zw2-60-eGD"/>
+                            <constraint firstItem="odS-Ar-tFA" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="aZD-nd-TyB"/>
+                            <constraint firstItem="GC5-xf-TJ8" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="hdB-hR-OLE"/>
+                            <constraint firstItem="GC5-xf-TJ8" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="tqA-60-5zf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" title="History" id="Pc0-CG-lCR"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="videoExample" destination="mp8-lp-6im" id="0Xg-oR-O6v"/>
+                        <outlet property="activity" destination="odS-Ar-tFA" id="gLe-3c-5xH"/>
+                        <outlet property="videoView" destination="GC5-xf-TJ8" id="6hM-2W-QRu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -330,9 +294,8 @@
     </scenes>
     <resources>
         <image name="History Tab" width="33" height="33"/>
-        <image name="Play" width="50" height="50"/>
+        <image name="Loyola Title" width="917" height="213"/>
         <image name="Test Picture 1" width="1512" height="2016"/>
         <image name="Timeline Tab" width="28" height="28"/>
-        <image name="Video Example" width="2016" height="1512"/>
     </resources>
 </document>

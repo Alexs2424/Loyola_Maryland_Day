@@ -8,26 +8,22 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UIWebViewDelegate {
     
     //This is a test view controller until we know what we are getting from
     //the design team
-    @IBOutlet weak var videoExample: UIImageView!
+    @IBOutlet weak var videoView: UIWebView!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        self.videoExample.contentMode = .scaleAspectFill
-        self.videoExample.layer.masksToBounds = true
-        
+
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
         
-//        navigationController?.navigationBar.barTintColor = UIColor(red: 34/255.0, green: 85/255.0, blue: 75/255.0, alpha: 1.0)
-//        navigationController?.navigationBar.titleTextAttributes = [UITextAttributeTextColor: UIColor.white]
-//        UINavigationBar.appearance().titleTextAttributes = [UITextAttributeTextColor: UIColor.blueColor()]
+        self.videoView.delegate = self
+        self.webViewForVideo(path: "https://vimeo.com/122659929")
         
     }
 
@@ -36,5 +32,18 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func webViewForVideo(path: String) {
+        //do not hide webview
+        let url = URL(string: "\(path)")
+        let request = URLRequest(url: url!)
+        self.videoView.loadRequest(request)
+        self.activity.isHidden = false
+        self.activity.hidesWhenStopped = true
+        self.activity.startAnimating()
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        self.activity.stopAnimating()
+    }
 }
 
