@@ -21,7 +21,6 @@ class FirstViewController: UIViewController, UIWebViewDelegate {
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
-        
         self.videoView.delegate = self
         self.webViewForVideo(path: "https://vimeo.com/122659929")
         
