@@ -19,13 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GC5-xf-TJ8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="264"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="264" id="dgu-F8-yZ9"/>
-                                </constraints>
-                            </webView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="odS-Ar-tFA">
                                 <rect key="frame" x="177" y="159" width="20" height="20"/>
                                 <constraints>
@@ -34,22 +27,40 @@
                                 </constraints>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9t0-hv-Kha">
-                                <rect key="frame" x="0.0" y="325" width="375" height="293"/>
+                                <rect key="frame" x="0.0" y="318" width="375" height="300"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Loyola Title" translatesAutoresizingMaskIntoConstraints="NO" id="VHQ-Gm-VTi">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loyola Title" translatesAutoresizingMaskIntoConstraints="NO" id="VHQ-Gm-VTi">
                                         <rect key="frame" x="67" y="21" width="240" height="47"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="C21-bv-7mh"/>
                                             <constraint firstAttribute="height" constant="47" id="gao-7q-n3o"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwh-wo-Ted">
+                                        <rect key="frame" x="25" y="89" width="325" height="133"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="133" id="TGV-vN-nYs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2661682665348053" green="0.59055566787719727" blue="0.46273106336593628" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="xwh-wo-Ted" firstAttribute="leading" secondItem="9t0-hv-Kha" secondAttribute="leading" constant="25" id="Fpf-U6-ZQh"/>
+                                    <constraint firstAttribute="height" constant="300" id="GvE-Rz-Afn"/>
                                     <constraint firstItem="VHQ-Gm-VTi" firstAttribute="centerX" secondItem="9t0-hv-Kha" secondAttribute="centerX" id="Ogy-Vq-v2k"/>
-                                    <constraint firstItem="VHQ-Gm-VTi" firstAttribute="top" secondItem="9t0-hv-Kha" secondAttribute="top" constant="26" id="QZa-iB-PJ6"/>
+                                    <constraint firstItem="VHQ-Gm-VTi" firstAttribute="top" secondItem="9t0-hv-Kha" secondAttribute="top" constant="21" id="QZa-iB-PJ6"/>
+                                    <constraint firstItem="xwh-wo-Ted" firstAttribute="centerX" secondItem="9t0-hv-Kha" secondAttribute="centerX" id="XFx-zG-wwh"/>
+                                    <constraint firstItem="xwh-wo-Ted" firstAttribute="top" secondItem="VHQ-Gm-VTi" secondAttribute="bottom" constant="21" id="hjC-mr-eab"/>
+                                    <constraint firstAttribute="trailing" secondItem="xwh-wo-Ted" secondAttribute="trailing" constant="25" id="pT8-6X-dFK"/>
                                 </constraints>
                             </view>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GC5-xf-TJ8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="257"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -57,12 +68,12 @@
                             <constraint firstItem="GC5-xf-TJ8" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="FPP-oR-Jnr"/>
                             <constraint firstItem="odS-Ar-tFA" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="95" id="GQU-Kr-9bQ"/>
                             <constraint firstItem="9t0-hv-Kha" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="IFq-e0-4pq"/>
+                            <constraint firstItem="9t0-hv-Kha" firstAttribute="top" secondItem="GC5-xf-TJ8" secondAttribute="bottom" constant="-3" id="Ifw-84-uJT"/>
                             <constraint firstItem="9t0-hv-Kha" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="R9L-U2-HkP"/>
                             <constraint firstItem="GC5-xf-TJ8" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="UGK-dl-A6t"/>
-                            <constraint firstItem="9t0-hv-Kha" firstAttribute="top" secondItem="GC5-xf-TJ8" secondAttribute="bottom" constant="-3" id="Zw2-60-eGD"/>
                             <constraint firstItem="odS-Ar-tFA" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="aZD-nd-TyB"/>
                             <constraint firstItem="GC5-xf-TJ8" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="hdB-hR-OLE"/>
-                            <constraint firstItem="GC5-xf-TJ8" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="tqA-60-5zf"/>
+                            <constraint firstItem="GC5-xf-TJ8" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="sbE-bF-0IP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
