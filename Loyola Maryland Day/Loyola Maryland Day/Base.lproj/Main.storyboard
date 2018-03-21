@@ -19,15 +19,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="odS-Ar-tFA">
-                                <rect key="frame" x="177" y="159" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="O6w-Tv-1O7"/>
-                                    <constraint firstAttribute="width" constant="20" id="m8y-2E-veU"/>
-                                </constraints>
-                            </activityIndicatorView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GC5-xf-TJ8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="313"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9t0-hv-Kha">
-                                <rect key="frame" x="0.0" y="318" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="376" width="375" height="242"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loyola Title" translatesAutoresizingMaskIntoConstraints="NO" id="VHQ-Gm-VTi">
                                         <rect key="frame" x="67" y="21" width="240" height="47"/>
@@ -36,12 +33,15 @@
                                             <constraint firstAttribute="height" constant="47" id="gao-7q-n3o"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwh-wo-Ted">
-                                        <rect key="frame" x="25" y="89" width="325" height="133"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwh-wo-Ted">
+                                        <rect key="frame" x="25" y="76" width="325" height="146"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="133" id="TGV-vN-nYs"/>
+                                            <constraint firstAttribute="height" constant="146" id="TGV-vN-nYs"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <string key="text">Welcome to The LUMission App!
+
+LUMission was designed to share information about Mission Week, a weeklong celebration of Loyola’s Jesuit and Maryland Heritage.</string>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -49,26 +49,29 @@
                                 <color key="backgroundColor" red="0.2661682665348053" green="0.59055566787719727" blue="0.46273106336593628" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="xwh-wo-Ted" firstAttribute="leading" secondItem="9t0-hv-Kha" secondAttribute="leading" constant="25" id="Fpf-U6-ZQh"/>
-                                    <constraint firstAttribute="height" constant="300" id="GvE-Rz-Afn"/>
+                                    <constraint firstAttribute="height" constant="242" id="GvE-Rz-Afn"/>
                                     <constraint firstItem="VHQ-Gm-VTi" firstAttribute="centerX" secondItem="9t0-hv-Kha" secondAttribute="centerX" id="Ogy-Vq-v2k"/>
                                     <constraint firstItem="VHQ-Gm-VTi" firstAttribute="top" secondItem="9t0-hv-Kha" secondAttribute="top" constant="21" id="QZa-iB-PJ6"/>
                                     <constraint firstItem="xwh-wo-Ted" firstAttribute="centerX" secondItem="9t0-hv-Kha" secondAttribute="centerX" id="XFx-zG-wwh"/>
-                                    <constraint firstItem="xwh-wo-Ted" firstAttribute="top" secondItem="VHQ-Gm-VTi" secondAttribute="bottom" constant="21" id="hjC-mr-eab"/>
+                                    <constraint firstItem="xwh-wo-Ted" firstAttribute="top" secondItem="VHQ-Gm-VTi" secondAttribute="bottom" constant="8" id="hjC-mr-eab"/>
                                     <constraint firstAttribute="trailing" secondItem="xwh-wo-Ted" secondAttribute="trailing" constant="25" id="pT8-6X-dFK"/>
                                 </constraints>
                             </view>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GC5-xf-TJ8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="257"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="odS-Ar-tFA">
+                                <rect key="frame" x="177" y="210" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="O6w-Tv-1O7"/>
+                                    <constraint firstAttribute="width" constant="20" id="m8y-2E-veU"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9t0-hv-Kha" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="Ddq-R7-Bhx"/>
                             <constraint firstItem="GC5-xf-TJ8" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="FPP-oR-Jnr"/>
-                            <constraint firstItem="odS-Ar-tFA" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="95" id="GQU-Kr-9bQ"/>
+                            <constraint firstItem="odS-Ar-tFA" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="146" id="GQU-Kr-9bQ"/>
                             <constraint firstItem="9t0-hv-Kha" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="IFq-e0-4pq"/>
-                            <constraint firstItem="9t0-hv-Kha" firstAttribute="top" secondItem="GC5-xf-TJ8" secondAttribute="bottom" constant="-3" id="Ifw-84-uJT"/>
+                            <constraint firstItem="9t0-hv-Kha" firstAttribute="top" secondItem="GC5-xf-TJ8" secondAttribute="bottom" constant="-1" id="Ifw-84-uJT"/>
                             <constraint firstItem="9t0-hv-Kha" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="R9L-U2-HkP"/>
                             <constraint firstItem="GC5-xf-TJ8" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="UGK-dl-A6t"/>
                             <constraint firstItem="odS-Ar-tFA" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="aZD-nd-TyB"/>
@@ -77,7 +80,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <navigationItem key="navigationItem" title="History" id="Pc0-CG-lCR"/>
+                    <navigationItem key="navigationItem" title="History" id="Pc0-CG-lCR">
+                        <barButtonItem key="rightBarButtonItem" image="Info" id="1Gb-kg-Pcb">
+                            <color key="tintColor" red="0.0039215686269999999" green="0.34901960780000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="wE1-Ci-mQE" kind="show" id="k3N-9B-ff8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="activity" destination="odS-Ar-tFA" id="gLe-3c-5xH"/>
@@ -87,6 +97,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1469.5999999999999" y="-322.48875562218893"/>
+        </scene>
+        <!--Acknowledgments-->
+        <scene sceneID="zpw-iU-bvu">
+            <objects>
+                <viewController title="Acknowledgments" id="wE1-Ci-mQE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0in-Yz-v8D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAb-5N-mEe">
+                                <rect key="frame" x="16" y="96" width="343" height="401"/>
+                                <string key="text">Development Team:
+Alex Santarelli ’21
+Grant Versfeld ’21
+Herve Franceschi 
+
+Content Curator:
+Herbert Dunmore 
+
+Administrative Team: 
+Louise Finn
+Randall Saba
+Candice Zhu
+Marcia Wann
+
+Thank you to Dr. Robert Kelly for initiating and supporting this project.</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.017202582210302353" green="0.59902709722518921" blue="0.45580393075942993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aAb-5N-mEe" firstAttribute="centerX" secondItem="0in-Yz-v8D" secondAttribute="centerX" id="0CG-N6-yfJ"/>
+                            <constraint firstItem="rQl-wF-CvW" firstAttribute="trailing" secondItem="aAb-5N-mEe" secondAttribute="trailing" constant="16" id="OcH-Cb-eKb"/>
+                            <constraint firstItem="aAb-5N-mEe" firstAttribute="leading" secondItem="rQl-wF-CvW" secondAttribute="leading" constant="16" id="bnS-ta-FhX"/>
+                            <constraint firstItem="aAb-5N-mEe" firstAttribute="top" secondItem="rQl-wF-CvW" secondAttribute="top" constant="32" id="gaK-xQ-EQ9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rQl-wF-CvW"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.tintColor">
+                                <color key="value" red="0.25882352939999997" green="0.58823529409999997" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iyN-Fa-SP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2181.5999999999999" y="-322.48875562218893"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -305,6 +365,7 @@
     </scenes>
     <resources>
         <image name="History Tab" width="33" height="33"/>
+        <image name="Info" width="26" height="26"/>
         <image name="Loyola Title" width="917" height="213"/>
         <image name="Test Picture 1" width="1512" height="2016"/>
         <image name="Timeline Tab" width="28" height="28"/>
