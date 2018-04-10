@@ -1,0 +1,37 @@
+**Old code from pre 1.0 LUMission release**
+
+
+TimelineTableViewControlller.swift
+//NEW URL https://jesuitmobileapp.loyola.edu/controller/getReleasedVideos.php
+//OLD URL "http://hjfranceschi.cs.loyola.edu/videos/getVideos.php"
+
+var tempTableArray: [String] = []
+
+//Test Setup for TimelineCell Test data
+//            timelineCell?.title.text = data[indexPath.row].title
+//            timelineCell?.date.text = data[indexPath.row].date
+//            timelineCell?.marylandDayImageView.image = photoForIdNumber(Id: data[indexPath.row].photoId)
+//            timelineCell?.marylandDayImageView.contentMode = .scaleAspectFill
+//            timelineCell?.marylandDayImageView.layer.masksToBounds = true
+//            timelineCell?.marylandDayImageView.layer.cornerRadius = 12
+
+//photoForIdNumber(Id: mDayData[indexPath.row].photoId)
+
+//Quick for testing for different default photos
+    func photoForIdNumber(Id: Int) -> UIImage {
+        switch Id {
+        case 1:
+            return UIImage(named: "Test Picture 1")!
+        case 2:
+            return UIImage(named: "Test Picture 2")!
+        case 3:
+            return UIImage(named: "Test Picture 3")!
+        default:
+            return UIImage(named: "Test Picture 1")!
+        }
+    }
+
+AppDelegate.swift
+//        UINavigationBar.appearance().barTintColor = UIColor(red: 34/255.0, green: 85/255.0, blue: 75/255.0, alpha: 1.0)
+//        UINavigationBar.appearance().tintColor = UIColor.white
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]

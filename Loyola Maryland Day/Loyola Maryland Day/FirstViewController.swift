@@ -23,7 +23,6 @@ class FirstViewController: UIViewController, UIWebViewDelegate {
         }
         self.videoView.delegate = self
         self.webViewForVideo(path: "https://vimeo.com/122659929")
-        
     }
 
     override func didReceiveMemoryWarning() {
